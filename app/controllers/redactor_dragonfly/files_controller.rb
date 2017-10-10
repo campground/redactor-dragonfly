@@ -9,7 +9,7 @@ module RedactorDragonfly
       @attach = RedactorDragonfly.attach_model.new
       @attach.file = params[:file]
       if @attach.save
-        render text: { filelink: @attach.file.remote_url, filename: @attach.file.name }.to_json
+        render plain: { filelink: @attach.file.remote_url, filename: @attach.file.name }.to_json
       else
         head :ok
       end
