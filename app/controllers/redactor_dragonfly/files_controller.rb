@@ -11,7 +11,7 @@ module RedactorDragonfly
       if @attach.save
         render text: { filelink: @attach.file.remote_url, filename: @attach.file.name }.to_json
       else
-        render nothing: true
+        head :ok
       end
     end
 
